@@ -4,12 +4,14 @@ const app = new Vue({
         email : ""
     },
     mounted(){
-        axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
-        .then((result) => {
-            console.log(result);
+        for(let i = 0; i < 10; i++){
+            axios.get("https://flynn.boolean.careers/exercises/api/random/mail")
+            .then((result) => {
             let risultato = result.data.response;
             console.log(risultato);
             this.email = risultato;
         });
+        }
+        
     }
 });
